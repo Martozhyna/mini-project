@@ -17,7 +17,7 @@ document.body.appendChild(divBtn);
 
 let btn = document.createElement('button');
 btn.classList.add('click','btn');
-btn.innerText = 'Titles';
+btn.innerText = 'Post of current user';
 divBtn.appendChild(btn);
 
 let divTitle = document.createElement('div');
@@ -32,21 +32,21 @@ document.body.appendChild(divTitle)
         for (const usersKey in users) {
             if ( typeof users[usersKey] !== 'object') {
                 let divInf = document.createElement('div');
-                divInf.innerText = `${usersKey}: ${users[usersKey]}`;
+                divInf.innerHTML = `<b>${usersKey}</b>:${users[usersKey]}`;
                 div.appendChild(divInf);
             } else {
                 let array = users[usersKey];
                 for (const arrayKey in array) {
                     if (typeof array[arrayKey] !== 'object') {
                         let divInfor = document.createElement('div');
-                        divInfor.innerText = `${arrayKey}: ${array[arrayKey]}`;
+                        divInfor.innerHTML = `<b>${arrayKey}</b>:${array[arrayKey]}`;
                         div.appendChild(divInfor);
                     } else {
                         let miniArray = array[arrayKey];
                         for (const miniArrayKey in miniArray) {
                             if (typeof miniArray[miniArrayKey] !== 'object') {
                                 let divInformation = document.createElement('div');
-                                divInformation.innerText = `${miniArrayKey}: ${miniArray[miniArrayKey]}`;
+                                divInformation.innerHTML = `<b>${miniArrayKey}</b>: ${miniArray[miniArrayKey]}`;
                                 div.appendChild(divInformation);
                             }
                         }
